@@ -1,0 +1,99 @@
+[
+    {
+        "id":"0",
+        "name": "iphone 14",
+        "description": "Lorem ipsum dolor sit amet.",
+        "image": "./images/iPhone+14.png",
+        "price":"75000",
+        "quantity":"0"
+    },
+    {
+        "id":"1",
+        "name": "sofa",
+        "description": "Lorem ipsum dolor sit amet.",
+        "image": "./images/cushion chair.png",
+        "price":"25000",
+        "quantity":"0"
+        
+    },
+    {
+        "id":"2",
+        "name": "Digital camera ",
+        "description": "Lorem ipsum dolor sit amet.",
+        "image": "./images/digital camera.png",
+        "price":"55000",
+        "quantity":"0"
+    },
+    {
+        "id":"3",
+        "name": "fullsize sofa",
+        "description": "Lorem ipsum dolor sit amet.",
+        "image": "./images/fullsize sofa.png",
+        "price":"45000",
+        "quantity":"0"
+    },
+    {
+        "id":"4",
+        "name": "Detol",
+        "description": "Lorem ipsum dolor sit amet.",
+        "image": "./images/detol.png",
+        "price":"50",
+        "quantity":"0"
+    },
+    {
+        "id":"5",
+        "name": "Edible oil",
+        "description": "Lorem ipsum dolor sit amet.",
+        "image": "./images/edible_oil.png",
+        "price":"350",
+        "quantity":"0"
+    },
+    {
+        "id":"6",
+        "name": "Face Cream",
+        "description": "Lorem ipsum dolor sit amet.",
+        "image": "./images/face creams.png",
+        "price":"500",
+        "quantity":"0"
+    },
+    {
+        "id":"7",
+        "name": "Conflakes",
+        "description": "Lorem ipsum dolor sit amet.",
+        "image": "./images/food_conflakes.png",
+        "price":"150",
+        "quantity":"0"
+    },
+    {
+        "id":"8",
+        "name": "fullsize sofa",
+        "description": "Lorem ipsum dolor sit amet.",
+        "image": "./images/fullsize sofa.png",
+        "price":"4500",
+        "quantity":"0"
+    },
+    {
+        "id":"9",
+        "name": "Detol",
+        "description": "Lorem ipsum dolor sit amet.",
+        "image": "./images/detol.png",
+        "price":"50",
+        "quantity":"0"
+    },
+    {
+        "id":"10",
+        "name": "four seat table",
+        "description": "Lorem ipsum dolor sit amet.",
+        "image": "./images/four seat table.png",
+        "price":"3500",
+        "quantity":"0"
+    },
+    {
+        "id":"11",
+        "name": "Face Cream",
+        "description": "Lorem ipsum dolor sit amet.",
+        "image": "./images/face creams.png",
+        "price":"500",
+        "quantity":"0"
+    }
+]
