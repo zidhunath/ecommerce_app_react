@@ -1,41 +1,17 @@
 import { React } from "react";
 import { useState, useEffect } from "react";
 import "../cart.css";
-import { json } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { incrementQuantity, decrementQuantity,removeItem } from "../redux/Cart";
 
 export function Cart() {
+  const { cartList } = useSelector((state) => state.cart);
+
+  const dispatch = useDispatch();
+
   const productArray = JSON.parse(localStorage.getItem("items")) || [];
 
   let [dipsayItems, setDisplay] = useState([]);
-  let [quantity, setQuantitiy] = useState(1);
-
-  const increaseQuanatity = (id) => {
-    productArray.map((item) => {
-      if (id == item.id) {
-        item.quantity++;
-        quantity = item.quantity;
-        localStorage.setItem("items", JSON.stringify(productArray));
-      }
-    });
-    setQuantitiy(quantity);
-  };
-  const decreaseQuantity = (id) => {
-    productArray.map((productitem) => {
-      if (id == productitem.id) {
-        if (productitem.quantity > 0) {
-          productitem.quantity--;
-          quantity = productitem.quantity;
-          localStorage.setItem("items", JSON.stringify(productArray));
-        }
-        if (productitem.quantity == 0) {
-          productitem.quantity = 1;
-          quantity = productitem.quantity;
-          localStorage.setItem("items", JSON.stringify(productArray));
-        }
-      }
-    });
-    setQuantitiy(quantity);
-  };
   const removItem = (id) => {
     productArray.map((productItem, index) => {
       if (id == productItem.id) {
@@ -66,7 +42,7 @@ export function Cart() {
               <div className="column button ">
                 <button
                   className="button "
-                  onClick={() => decreaseQuantity(products.id)}
+                  onClick={() => dispatch(decrementQuantity(products))}
                 >
                   -
                 </button>
@@ -78,7 +54,7 @@ export function Cart() {
                 <button
                   id={products.id}
                   className="button "
-                  onClick={() => increaseQuanatity(products.id)}
+                  onClick={() => dispatch(incrementQuantity(products))}
                 >
                   +
                 </button>
@@ -88,7 +64,7 @@ export function Cart() {
               <button
                 id={products.id}
                 className="button is-danger"
-                onClick={() => removItem(products.id)}
+                onClick={() => dispatch(removeItem(products)) }
               >
                 Remove item
               </button>
