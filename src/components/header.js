@@ -21,6 +21,11 @@ export const Header = () => {
             <Link to = "/checkout"className = "navbar-item button is-primary">
               <strong>Checkout</strong>
             </Link>
+            <Link to="/Dbcomponents" className = "navbar-item button is-primary"> 
+            <strong>  
+              FromDb
+            </strong>
+            </Link>
           </div>
         </div>
       </div>

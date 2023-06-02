@@ -1,7 +1,7 @@
 import "bulma/css/bulma.min.css";
-import { Footer } from "../components/footer";
-import { Header } from "../components/header";
-import { Product } from "../components/product";
+import { Footer } from "./Footer";
+import { Header } from "./Header";
+import { Product } from "./Product";
 import product_Data from "../data/product_Data.json";
 
 export function Home () {

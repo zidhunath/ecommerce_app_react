@@ -1,31 +1,29 @@
 import { React } from "react";
-import { useState, useEffect } from "react";
+import Dexie from "dexie";
+import { useLiveQuery } from "dexie-react-hooks";
 import "../cart.css";
 import { useSelector, useDispatch } from "react-redux";
-import { incrementQuantity, decrementQuantity,removeItem } from "../redux/Cart";
+import {
+  incrementQuantity,
+  decrementQuantity,
+  removeItem,
+} from "../redux/Cart";
+import { db } from "../db/db";
+import { useEffect } from "react";
 
 export function Cart() {
-  const { cartList } = useSelector((state) => state.cart);
+  let { cartList } = useSelector((state) => state.cart);
+  const db_Data = useLiveQuery(() => db.cartItems.toArray(), []);
+
+  // const allItems = useLiveQuery(() => db.cartItems.toArray(), []);
 
   const dispatch = useDispatch();
 
-  const productArray = JSON.parse(localStorage.getItem("items")) || [];
-
-  let [dipsayItems, setDisplay] = useState([]);
-  const removItem = (id) => {
-    productArray.map((productItem, index) => {
-      if (id == productItem.id) {
-        productArray.splice(index, 1);
-        localStorage.setItem("items", JSON.stringify(productArray));
-        dipsayItems = [...productArray];
-      }
-    });
-    setDisplay(dipsayItems);
-  };
+  cartList = JSON.parse(localStorage.getItem("items")) || [];
 
   return (
     <div className=" container columns is-multiline mt-6 is-variable is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-2-fullhd">
-      {productArray.map((products, key) => {
+      {db_Data?.map((products, key) => {
         return (
           <div className="card box" key={products.id}>
             <div className="card-image">
@@ -64,7 +62,7 @@ export function Cart() {
               <button
                 id={products.id}
                 className="button is-danger"
-                onClick={() => dispatch(removeItem(products)) }
+                onClick={() => dispatch(removeItem(products))}
               >
                 Remove item
               </button>
